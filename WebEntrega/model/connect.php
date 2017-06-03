@@ -4,9 +4,9 @@
 			$host = getenv('127.0.0.1');  
     		$user = "root";                     
     		$pass = "";                             
-    		$db = "usuarios";                      
+    		$db = "anuncios";                      
     		$port = 3306;                           
-    		$tabla="usuarios";
+    		$tabla="anuncios";
     		
     		$conexion = mysqli_connect($host, $user, $pass, $db, $port)or die(mysql_error());
 			return $conexion;

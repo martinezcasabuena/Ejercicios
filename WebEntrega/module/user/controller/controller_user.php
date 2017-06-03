@@ -25,16 +25,16 @@
             
             $check = true;
             $error = array(
-                            'usuario' => '',
-                            'nombre' => '',
-                            'DNI' => '',
-                            'sexo' => '',
-                            'pass' => '',
-                            'edad' => '',
-                            'idioma' => '',
-                            'observaciones' =>'',
-                            'aficion' => '',
-                            'fecha_nacimiento' => ''
+                            'titulo' => '',
+                            'provincia' => '',
+                            'ciudad' => '',
+                            'direccion' => '',
+                            'metros' => '',
+                            'habitaciones' => '',
+                            'banyos' => '',
+                            'renta' =>'',
+                            'tipo' => '',
+                            'precio' => ''
                     );
             if (isset($_POST['create'])){
                 $result=validate();
@@ -70,16 +70,16 @@
             
             $check = true;
             $error = array(
-                            'usuario' => '',
-                            'nombre' => '',
-                            'DNI' => '',
-                            'sexo' => '',
-                            'pass' => '',
-                            'edad' => '',
-                            'idioma' => '',
-                            'observaciones' =>'',
-                            'aficion' => '',
-                            'fecha_nacimiento' => ''
+                            'titulo' => '',
+                            'provincia' => '',
+                            'ciudad' => '',
+                            'direccion' => '',
+                            'metros' => '',
+                            'habitaciones' => '',
+                            'banyos' => '',
+                            'renta' =>'',
+                            'tipo' => '',
+                            'precio' => ''
                     );
             if (isset($_POST['update'])){
                 $result=validate();
@@ -106,12 +106,10 @@
                 else {
                     $error = $result['error'];
                     $_SESSION['user']=$_POST;
-                    $_GET['id']=$_POST['usuario'];
+                    $_GET['id']=$_POST['titulo'];
                 }
             }
 
-
-            
             try{
                 $daouser = new DAOUser();
                 print_r($_GET['id']);

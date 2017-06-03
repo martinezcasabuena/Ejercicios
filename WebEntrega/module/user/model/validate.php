@@ -1,46 +1,56 @@
 <?php
-    function validate_usuario($texto){
-        $reg="/^[a-zA-Z]*$/";
-        return preg_match($reg,$texto);
-    }
-    
-    function validate_password($texto){
-        $reg = "/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/";
-        return preg_match($reg,$texto);
-    }
-    
-    function validate_nombre($texto){
-        $reg="/^[a-zA-Z]*$/";
-        return preg_match($reg,$texto);
-    }
-    
-    function validate_DNI($dni){
-        $reg="/^[0-9]{8}[A-Z]$/";
-        return preg_match($reg,$dni);
-    }
-    
-    function validate_sexo($texto){
+    function validate_titulo($texto){
         if(!isset($texto) || empty($texto)){
             return false;
         }else{
-            return true;
+            $reg="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|";
+            return preg_match($reg,$texto);
         }
     }
     
-    function validate_fecha($texto){
-        if(empty($texto)){
+    function validate_provincia($texto){
+        if(!isset($texto) || empty($texto)){
             return false;
         }else{
-            return true;
+            $reg="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|";
+            return preg_match($reg,$texto);
         }
     }
     
-    function validate_edad($texto){
+    function validate_ciudad($texto){
+        if(!isset($texto) || empty($texto)){
+            return false;
+        }else{
+            $reg="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|";
+            return preg_match($reg,$texto);
+        }
+    }
+    
+    function validate_direccion($texto){
+        if(!isset($texto) || empty($texto)){
+            return false;
+        }else{
+            $reg="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|";
+            return preg_match($reg,$texto);
+        }
+    }
+    
+    function validate_metros($texto){
         $reg="/[0-9]{1,2}$/";
         return preg_match($reg,$texto);
     }
     
-    function validate_pais($texto){
+    function validate_habitaciones($texto){
+        $reg="/[0-9]{1,2}$/";
+        return preg_match($reg,$texto);
+    }
+    
+    function validate_banyos($texto){
+        $reg="/[0-9]{1,2}$/";
+        return preg_match($reg,$texto);
+    }
+    
+    function validate_renta($texto){
         if(!isset($texto) || empty($texto)){
             return false;
         }else{
@@ -48,7 +58,7 @@
         }
     }
     
-    function validate_idioma($texto){
+    function validate_tipo($texto){
         if(!isset($texto) || empty($texto)){
             return false;
         }else{
@@ -56,20 +66,17 @@
         }
     }
     
-    function validate_observaciones($texto){
+   /* function validate_observaciones($texto){
         if(empty($texto)){
             return false;
         }else{
             return true;
         }
-    }
+    }*/
     
-    function validate_aficion($texto){
-        if(!isset($texto) || empty($texto)){
-            return false;
-        }else{
-            return true;
-        }
+    function validate_precio($texto){
+        $reg="/[0-9]{1,6}$/";
+        return preg_match($reg,$texto);
     }
     
     function validate(){
@@ -77,99 +84,109 @@
 
         $error=array();
         
-        $v_usuario=$_POST['usuario'];
-        $v_password=$_POST['pass'];
-        $v_nombre=$_POST['nombre'];
-        $v_DNI=$_POST['DNI'];
-        $v_sexo=$_POST['sexo'];
-        $v_fecha_nacimiento=$_POST['fecha_nacimiento'];
-        $v_edad=$_POST['edad'];
-        $v_idioma=$_POST['idioma'];
-        $v_observaciones=$_POST['observaciones'];
-        $v_aficion=$_POST['aficion'];
+        $v_titulo=$_POST['titulo'];
+        $v_provincia=$_POST['provincia'];
+        $v_ciudad=$_POST['ciudad'];
+        $v_direccion=$_POST['direccion'];
+        $v_metros=$_POST['metros'];
+        $v_habitaciones=$_POST['habitaciones'];
+        $v_banyos=$_POST['banyos'];
+        $v_tipo=$_POST['tipo'];
+        //$v_renta=$_POST['renta'];
+        //$v_observaciones=$_POST['observaciones'];
+        $v_precio=$_POST['precio'];
         
-        $r_usuario=validate_usuario($v_usuario);
-        $r_password=validate_password($v_password);
-        $r_nombre=validate_nombre($v_nombre);
-        $r_DNI=validate_DNI($v_DNI);
-        $r_sexo=validate_sexo($v_sexo);
-        $r_fecha_nacimiento=validate_fecha($v_fecha_nacimiento);
-        $r_edad=validate_edad($v_edad);
-        $r_idioma=validate_idioma($v_idioma);
-        $r_observaciones=validate_observaciones($v_observaciones);
-        $r_aficion=validate_aficion($v_aficion);
+        $r_titulo=validate_titulo($v_titulo);
+        $r_provincia=validate_provincia($v_provincia);
+        $r_ciudad=validate_ciudad($v_ciudad);
+        $r_direccion=validate_direccion($v_direccion);
+        $r_metros=validate_metros($v_metros);
+        $r_habitaciones=validate_habitaciones($v_habitaciones);
+        $r_banyos=validate_banyos($v_banyos);
+        $r_tipo=validate_tipo($v_tipo);
+        //$r_renta=validate_renta($v_renta);
+
+       // $r_observaciones=validate_observaciones($v_observaciones);
+        $r_precio=validate_precio($v_precio);
         
-        if($r_usuario !== 1){
-            $error_usuario = " El usuario introducido no es valido 1";
+        if($r_titulo !== 1){
+            $error_titulo = " * El titulo introducido no es valido 1";
             $check=false;
         }else{
-            $error_usuario = "";
+            $error_titulo = "";
         }
-        if($r_password !== 1){
-            $error_pass = " * La contraseña introducida no es valida";
+        if($r_provincia !== 1){
+            $error_provincia = " * La provincia introducida no es valida";
             $check=false;
         }else{
-            $error_pass = "";
+            $error_provincia = "";
         }
-        if($r_nombre !== 1){
-            $error_nombre = " * El nombre introducido no es valido";
+        if($r_ciudad !== 1){
+            $error_ciudad = " * La ciudad introducida no es valida";
             $check=false;
         }else{
-            $error_nombre = "";
+            $error_ciudad = "";
         }
-        if($r_DNI !== 1){
-            $error_DNI = " * El DNI introducido no es valido";
+        if($r_direccion !== 1){
+            $error_direccion = " * La direccion introducida no es valida";
             $check=false;
         }else{
-            $error_DNI = "";
+            $error_direccion = "";
         }
-        if(!$r_sexo){
-            $error_sexo = " * No has seleccionado ningun genero";
+        if(!$r_metros){
+            $error_metros = " * Los metros introducidos no son validos";
             $check=false;
         }else{
-            $error_sexo = "";
+            $error_metros = "";
         }
-        if(!$r_fecha_nacimiento){
-            $error_fecha_nacimiento = " * No has introducido ninguna fecha";
+        if(!$r_habitaciones){
+            $error_habitaciones = " * El numero de habitaciones introducido no es valido";
             $check=false;
         }else{
-            $error_fecha_nacimiento = "";
+            $error_habitaciones = "";
         }
-        if($r_edad !== 1){
-            $error_edad = " * La edad introducida no es valida";
+        if($r_banyos !== 1){
+            $error_banyos = " * El numero de baños introducido no es valido";
             $check=false;
         }else{
-            $error_edad = "";
+            $error_banyos = "";
         }
-        if(!$r_idioma){
-            $error_idioma = " * No has seleccionado ningun idioma";
+        /*if(!$r_renta){
+            $error_renta = " * No has seleccionado ningun tipo de renta";
             $check=false;
         }else{
-            $error_idioma = "";
+            $error_renta = "";
+        }*/
+        if(!$r_tipo){
+            $error_tipo = " * No has seleccionado ningun tipo";
+            $check=false;
+        }else{
+            $error_tipo = "";
         }
-        if(!$r_observaciones){
+       /* if(!$r_observaciones){
             $error_observaciones = " * El texto introducido no es valido";
             $check=false;
         }else{
             $error_observaciones = "";
-        }
-        if(!$r_aficion){
-            $error_aficion = " * No has seleccionado ninguna aficion";
+        }*/
+        if(!$r_precio){
+            $error_precio = " * El precio introducido no es valido";
             $check=false;
         }else{
-            $error_aficion = "";
+            $error_precio = "";
         }
         $error = array(
-                            'usuario' => $error_usuario,
-                            'nombre' => $error_nombre,
-                            'DNI' => $error_DNI,
-                            'sexo' => $error_sexo,
-                            'pass' => $error_pass,
-                            'edad' => $error_edad,
-                            'idioma' => $error_idioma,
-                            'observaciones' => $error_observaciones,
-                            'aficion' => $error_aficion,
-                            'fecha_nacimiento' => $error_fecha_nacimiento
+                            'titulo' => $error_titulo,
+                            'ciudad' => $error_ciudad,
+                            'direccion' => $error_direccion,
+                            'metros' => $error_metros,
+                            'provincia' => $error_provincia,
+                            'banyos' => $error_banyos,
+                            'tipo' => $error_tipo,
+                            //'renta' => $error_renta,
+                            //'observaciones' => $error_observaciones,
+                            'precio' => $error_precio,
+                            'habitaciones' => $error_habitaciones
                         );
         $resultado=array('resultado'=>$check , 'error'=>$error);
         return $resultado;

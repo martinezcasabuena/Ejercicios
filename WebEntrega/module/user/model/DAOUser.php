@@ -3,23 +3,20 @@
     
 	class DAOUser{
 		function insert_user($datos){
-			$user=$datos['usuario'];
-        	$passwd=$datos['pass'];
-        	$name=$datos['nombre'];
-        	$dni=$datos['DNI'];
-        	$sex=$datos['sexo'];
-        	$birthdate=$datos['fecha_nacimiento'];
-        	$age=$datos['edad'];
-        	$country=$datos['pais'];
-        	foreach ($datos['idioma'] as $indice) {
-        	    $language="$indice";
-        	}
-        	$comment=$datos['observaciones'];
-        	foreach ($datos['aficion'] as $indice) {
-        	    $hobby="$indice:";
-        	}
-        	$sql = " INSERT INTO usuario (user, pass, name, dni, sex, birthdate, age, country, language, comment, hobby)"
-        		. " VALUES ('$user', '$passwd', '$name', '$dni', '$sex', '$birthdate', '$age', '$country', '$language', '$comment', '$hobby')";
+			$titulo=$datos['titulo'];
+        	$provincia=$datos['provincia'];
+        	$ciudad=$datos['ciudad'];
+        	$direccion=$datos['direccion'];
+        	$metros=$datos['metros'];
+        	$habitaciones=$datos['habitaciones'];
+        	$banyos=$datos['banyos'];
+            $renta=$datos['renta'];
+        	$precio=$datos['precio'];
+            $tipo=$datos['tipo'];
+
+
+        	$sql = " INSERT INTO anuncios (titulo, provincia, ciudad, direccion, metros, habitaciones, banyos, renta, tipo,precio)"
+        		. " VALUES ('$titulo', '$provincia', '$ciudad', '$direccion', '$metros', '$habitaciones', '$banyos', '$renta', '$tipo', '$precio')";
             
             $conexion = connect::con();
             $res = mysqli_query($conexion, $sql);
@@ -28,7 +25,7 @@
 		}
 		
 		function select_all_user(){
-			$sql = "SELECT * FROM usuario ORDER BY user ASC";
+			$sql = "SELECT * FROM anuncios ORDER BY idAnuncio ASC";
 			
 			$conexion = connect::con();
             $res = mysqli_query($conexion, $sql);
@@ -37,7 +34,7 @@
 		}
 		
 		function select_user($user){
-			$sql = "SELECT * FROM usuario WHERE user='$user'";
+			$sql = "SELECT * FROM anuncios WHERE idAnuncio='$user'";
 			
 			$conexion = connect::con();
             $res = mysqli_query($conexion, $sql)->fetch_object();
@@ -46,24 +43,19 @@
 		}
 		
 		function update_user($datos){
-			$user=$datos['usuario'];
-        	$passwd=$datos['pass'];
-        	$name=$datos['nombre'];
-        	$dni=$datos['DNI'];
-        	$sex=$datos['sexo'];
-        	$birthdate=$datos['fecha_nacimiento'];
-        	$age=$datos['edad'];
-        	$country=$datos['pais'];
-        	foreach ($datos['idioma'] as $indice) {
-        	    $language="$indice";
-        	}
-        	$comment=$datos['observaciones'];
-        	foreach ($datos['aficion'] as $indice) {
-        	    $hobby="s$indice:";
-        	}
+            $titulo=$datos['titulo'];
+            $provincia=$datos['provincia'];
+            $ciudad=$datos['ciudad'];
+            $direccion=$datos['direccion'];
+            $metros=$datos['metros'];
+            $habitaciones=$datos['habitaciones'];
+            $banyos=$datos['banyos'];
+            $renta=$datos['renta'];
+            $precio=$datos['precio'];
+            $tipo=$datos['tipo'];
         	
-        	$sql = " UPDATE usuario SET pass='$passwd', name='$name', dni='$dni', sex='$sex', birthdate='$birthdate', age='$age',"
-        		. " country='$country', language='$language', comment='$comment', hobby='$hobby' WHERE user='$user'";
+        	$sql = " UPDATE anuncios SET titulo='$titulo', provincia='$provincia', ciudad='$ciudad', direccion='$direccion', metros='$metros', habitaciones='$habitaciones', banyos='$banyos',"
+        		. " renta='$renta', precio='$precio', tipo='$tipo' WHERE titulo='$titulo'";
             
             $conexion = connect::con();
             $res = mysqli_query($conexion, $sql);
@@ -72,7 +64,7 @@
 		}
 		
 		function delete_user($user){
-			$sql = "DELETE FROM usuario WHERE user='$user'";
+			$sql = "DELETE FROM anuncios WHERE idAnuncio='$user'";
 			
 			$conexion = connect::con();
             $res = mysqli_query($conexion, $sql);

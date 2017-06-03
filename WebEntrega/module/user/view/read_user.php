@@ -1,103 +1,103 @@
 <div id="contenido">
-    <h1>Informacion del Usuario</h1>
+    <h1>Informacion del Anuncio</h1>
     <p>
     <table border='2'>
         <tr>
-            <td>Usuario: </td>
+            <td>idAnuncio: </td>
             <td>
                 <?php
-                    echo $user['user'];
+                    echo $user['idAnuncio'];
                 ?>
             </td>
         </tr>
     
         <tr>
-            <td>Contraseña: </td>
+            <td>Titulo Anuncio: </td>
             <td>
                 <?php
-                    echo $user['pass'];
+                    echo $user['titulo'];
                 ?>
             </td>
         </tr>
         
         <tr>
-            <td>Nombre: </td>
+            <td>Provincia: </td>
             <td>
                 <?php
-                    echo $user['name'];
+                    echo $user['provincia'];
                 ?>
             </td>
         </tr>
         
         <tr>
-            <td>DNI: </td>
+            <td>Ciudad: </td>
             <td>
                 <?php
-                    echo $user['dni'];
+                    echo $user['ciudad'];
                 ?>
             </td>
         </tr>
         
         <tr>
-            <td>Sexo: </td>
+            <td>Direccion: </td>
             <td>
                 <?php
-                    echo $user['sex'];
+                    echo $user['direccion'];
                 ?>
             </td>
         </tr>
         
         <tr>
-            <td>Fecha de nacimiento: </td>
+            <td>Metros: </td>
             <td>
                 <?php
-                    echo $user['birthdate'];
+                    echo $user['metros'];
                 ?>
             </td>
         </tr>
         
         <tr>
-            <td>Edad: </td>
+            <td>Habitaciones: </td>
             <td>
                 <?php
-                    echo $user['age'];
+                    echo $user['habitaciones'];
                 ?>
             </td>
             
         </tr>
         
         <tr>
-            <td>Pais: </td>
+            <td>Baños: </td>
             <td>
                 <?php
-                    echo $user['country'];
+                    echo $user['banyos'];
                 ?>
             </td>
         </tr>
         
         <tr>
-            <td>Idioma: </td>
+            <td>Renta: </td>
             <td>
                 <?php
-                    echo $user['language'];
+                    echo $user['renta'];
                 ?>
             </td>
         </tr>
         
         <tr>
-            <td>Observaciones: </td>
+            <td>Tipo: </td>
             <td>
                 <?php
-                    echo $user['comment'];
+                    echo $user['tipo'];
                 ?>
             </td>
         </tr>
         
         <tr>
-            <td>Aficiones: </td>
+            <td>Precio: </td>
             <td>
                 <?php
-                    echo $user['hobby'];
+                    echo $user['precio'];
                 ?>
             </td>
         </tr>

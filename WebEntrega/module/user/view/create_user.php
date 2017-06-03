@@ -1,127 +1,137 @@
 <div id="contenido">
     <form autocomplete="on" method="post" name="alta_user" id="alta_user" onsubmit="return validate();" action="index.php?page=controller_user&op=create">
-        <h1>Usuario nuevo</h1>
+        <h1>Anuncio nuevo</h1>
         <table border='0'>
             <tr>
-                <td>Usuario: </td>
-                <td><input type="text" id="usuario" name="usuario" placeholder="usuario" value=""/></td>
+                <td>Titulo Anuncio: </td>
+                <td><input type="text" id="titulo" name="titulo" placeholder="Titulo Anuncio" value=""/></td>
                 <td><font color="red">
-                    <span id="error_usuario" class="error">
+                    <span id="error_titulo" class="error">
                         <?php
-                           echo $error['usuario']
+                           echo $error['titulo']
                         ?>
                     </span>
                 </font></font></td>
             </tr>
         
             <tr>
-                <td>Contraseña: </td>
-                <td><input type="password" id="pass" name="pass" placeholder="contraseña" value=""/></td>
+                <td>Provincia: </td>
+                <td><input type="text" id="provincia" name="provincia" placeholder="Provincia" value=""/></td>
                 <td><font color="red">
-                    <span id="error_pass" class="error">
+                    <span id="error_provincia" class="error">
                         <?php
-                            echo $error['pass']
+                            echo $error['provincia']
                         ?>
                     </span>
                 </font></font></td>
             </tr>
             
             <tr>
-                <td>Nombre: </td>
-                <td><input type="text" id="nombre" name="nombre" placeholder="nombre" value=""/></td>
+                <td>Ciudad: </td>
+                <td><input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" value=""/></td>
                 <td><font color="red">
-                    <span id="error_nombre" class="error">
+                    <span id="error_ciudad" class="error">
                         <?php
-                           echo $error['nombre']
+                           echo $error['ciudad']
                         ?>
                     </span>
                 </font></font></td>
             </tr>
             
             <tr>
-                <td>DNI: </td>
-                <td><input type="text" id= "DNI" name="DNI" placeholder="DNI" value=""/></td>
+                <td>Direccion: </td>
+                <td><input type="text" id= "direccion" name="direccion" placeholder="Direccion" value=""/></td>
                 <td><font color="red">
-                    <span id="error_DNI" class="error">
+                    <span id="error_direccion" class="error">
                         <?php
-                          echo $error['DNI']
+                          echo $error['direccion']
                         ?>
                     </span>
                 </font></font></td>
             </tr>
             
             <tr>
-                <td>Sexo: </td>
-                <td><input type="radio" id="sexo" name="sexo" placeholder="sexo" value="Hombre"/>Hombre
-                    <input type="radio" id="sexo" name="sexo" placeholder="sexo" value="Mujer"/>Mujer</td>
+                <td>Metros: </td>
+                <td><input type="text" id= "metros" name="metros" placeholder="Metros" value=""/></td>
                 <td><font color="red">
-                    <span id="error_sexo" class="error">
+                    <span id="error_metros" class="error">
                         <?php
-                          echo $error['sexo']
+                          echo $error['metros']
                         ?>
                     </span>
                 </font></font></td>
             </tr>
             
             <tr>
-                <td>Fecha de nacimiento: </td>
-                <td><input id="fecha" type="text" name="fecha_nacimiento" placeholder="fecha de nacimiento" value=""/></td>
+                <td>Habitaciones: </td>
+                <td><input type="text" id="habitaciones" name="habitaciones" placeholder="Habitaciones" value=""/></td>
                 <td><font color="red">
-                    <span id="error_fecha_nacimiento" class="error">
+                    <span id="error_habitaciones" class="error">
                         <?php
-                         echo $error['fecha_nacimiento']
+                         echo $error['habitaciones']
+                        ?>
+                    </span>
+                </font></font></td>
+                
+            </tr>
+
+            <tr>
+                <td>Baños: </td>
+                <td><input type="text" id="banyos" name="banyos" placeholder="Baños" value=""/></td>
+                <td><font color="red">
+                    <span id="error_banyos" class="error">
+                        <?php
+                         echo $error['banyos']
+                        ?>
+                    </span>
+                </font></font></td>
+                
+            </tr>
+
+            <tr>
+                <td>Renta: </td>
+                <td><input type="radio" id="renta" name="renta" placeholder="Renta" value="alquiler"/>Alquiler
+                    <input type="radio" id="renta" name="renta" placeholder="Renta" value="venta"/>Venta</td>
+                <td><font color="red">
+                    <span id="error_renta" class="error">
+                        <?php
+                          //echo $error['renta']
                         ?>
                     </span>
                 </font></font></td>
             </tr>
             
             <tr>
-                <td>Edad: </td>
-                <td><input type="text" id="edad" name="edad" placeholder="edad" value=""/></td>
+                <td>Tipo: </td>
+                <td><select id="tipo" name="tipo" placeholder="Tipo de vivienda">
+                    <option value="piso">Piso</option>
+                    <option value="chalet">Chalet</option>
+                    <option value="casa">Casa</option>
+                    </select></td>
                 <td><font color="red">
-                    <span id="error_edad" class="error">
+                    <span id="error_tipo" class="error">
                         <?php
-                         echo $error['edad']
+                         echo $error['tipo']
+                        ?>
+                    </span>
+                </font></font></td>
+            </tr>
+
+            <tr>
+                <td>Precio: </td>
+                <td><input type="text" id="precio" name="precio" placeholder="Precio" value=""/></td>
+                <td><font color="red">
+                    <span id="error_precio" class="error">
+                        <?php
+                         echo $error['precio']
                         ?>
                     </span>
                 </font></font></td>
                 
             </tr>
             
-            <tr>
-                <td>Pais: </td>
-                <td><select id="pais" name="pais" placeholder="pais">
-                    <option value="España">España</option>
-                    <option value="Portugal">Portugal</option>
-                    <option value="Francia">Francia</option>
-                    </select></td>
-                <td><font color="red">
-                    <span id="error_pais" class="error">
-                        <?php
-                         //echo $error['usuario']
-                        ?>
-                    </span>
-                </font></font></td>
-            </tr>
             
-            <tr>
-                <td>Idioma: </td>
-                <td><select multiple size="3" id="idioma[]" name="idioma[]" placeholder="idioma">
-                    <option value="Español">Español</option>
-                    <option value="Ingles">Ingles</option>
-                    <option value="Portugues">Portugues</option>
-                    <option value="Frances">Frances</option>
-                    </select></td>
-                <td><font color="red">
-                    <span id="error_idioma" class="error">
-                        <?php
-                          echo $error['idioma']
-                        ?>
-                    </span>
-                </font></font></td>
-            </tr>
-            
-            <tr>
+          <!--  <tr>
                 <td>Observaciones: </td>
                 <td><textarea cols="30" rows="5" id="observaciones" name="observaciones" placeholder="observaciones" value=""></textarea></td>
                 <td><font color="red">
@@ -132,20 +142,7 @@
                     </span>
                 </font></font></td>
             </tr>
-            
-            <tr>
-                <td>Aficiones: </td>
-                <td><input type="checkbox" id= "aficion[]" name="aficion[]" placeholder= "aficion" value="Informatica"/>informatica
-                    <input type="checkbox" id= "aficion[]" name="aficion[]" placeholder= "aficion" value="Alimentacion"/>alimentacion
-                    <input type="checkbox" id= "aficion[]" name="aficion[]" placeholder= "aficion" value="Automovil"/>automovil</td>
-                <td><font color="red">
-                    <span id="error_aficion" class="error">
-                        <?php
-                         echo $error['aficion']
-                        ?>
-                    </span>
-                </font></font></td>
-            </tr>
+        -->
             
             <tr>
                 <td><input type="submit" name="create" id="create"/></td>
