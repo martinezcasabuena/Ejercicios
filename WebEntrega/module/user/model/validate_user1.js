@@ -1,5 +1,6 @@
+
 function validate_titulo(texto){
-    if (texto.length > 0){
+    if (texto.length > 10){
         var reg=/^[a-zA-Z]*$/;
         return reg.test(texto);
     }
@@ -51,18 +52,20 @@ function validate_banyos(texto){
     return false;
 }
 
-function validate_pais(texto){
-    if (texto.length > 0){
-        return true;
-    }
-    return false;
-}
-
 function validate_renta(texto){
-    if (texto.length > 0){
+    var i;
+    var ok=0;
+    for(i=0; i<texto.length;i++){
+        if(texto[i].checked){
+            ok=1
+        }
+    }
+ 
+    if(ok==1){
         return true;
     }
-    return false;
+    if(ok==0){
+        return false;
     }
 }
 
@@ -73,14 +76,14 @@ function validate_tipo(texto){
     return false;
 }
 
-function validate_precio(array){
+function validate_precio(texto){
     if (texto.length > 0){
         return true;
     }
     return false;
 }
 
-function validate_fecha(texto){
+function validate_fechaConstruccion(texto){
     if (texto.length > 0){
         return true;
     }
@@ -94,34 +97,36 @@ function validate(){
     var v_provincia=document.getElementById('provincia').value;
     var v_ciudad=document.getElementById('ciudad').value;
     var v_direccion=document.getElementById('direccion').value;
-    var v_metros=document.getElementsByName('metros').value;
+    var v_metros=document.getElementById('metros').value;
     var v_habitaciones=document.getElementById('habitaciones').value;
     var v_banyos=document.getElementById('banyos').value;
-    var v_renta=document.getElementById('renta');
-    //var v_tipo=document.getElementById('tipo');
-    var v_precio=document.getElementsByName('precio').value;
-    var v_fechaConstruccion=document.getElementById('fechaConstruccion').value;
+    var v_renta=document.getElementsByName('renta');
+    var v_tipo=document.getElementById('tipo');
+    var v_precio=document.getElementById('precio').value;
+    //var v_fechaConstruccion=document.getElementById('fechaConstruccion').value;
+
     
     var r_titulo=validate_titulo(v_titulo);
     var r_provincia=validate_provincia(v_provincia);
     var r_ciudad=validate_ciudad(v_ciudad);
-    var r_direccion=validate_direccion(v_direccion);
+    var r_direccion=validate_ciudad(v_direccion);
     var r_metros=validate_metros(v_metros);
     var r_habitaciones=validate_habitaciones(v_habitaciones);
     var r_banyos=validate_banyos(v_banyos);
     var r_renta=validate_renta(v_renta);
-    //var r_tipo=validate_tipo(v_tipo);
+    var r_tipo=validate_tipo(v_tipo);
     var r_precio=validate_precio(v_precio);
-    var r_fechaConstruccion=validate_fechaConstruccion(v_fechaConstruccion);
+    //var r_fechaConstruccion=validate_fechaConstruccion(v_fechaConstruccion);
 
-    
+
+
     if(!r_titulo){
         document.getElementById('error_titulo').innerHTML = " * El titulo introducido no es valido 1";
         check=false;
     }else{
         document.getElementById('error_titulo').innerHTML = "";
     }
-    if(!r_provincia){
+     if(!r_provincia){
         document.getElementById('error_provincia').innerHTML = " * La provincia introducida no es valida 2";
         check=false;
     }else{
@@ -163,23 +168,20 @@ function validate(){
     }else{
         document.getElementById('error_renta').innerHTML = "";
     }
-   /* if(!r_tipo){
-        document.getElementById('error_tipo').innerHTML = " * El texto introducido no es valido";
-        check=false;
-    }else{
-        document.getElementById('error_tipo').innerHTML = "";
-    }*/
     if(!r_precio){
         document.getElementById('error_precio').innerHTML = " * El precio introducido no es valido 9";
         check=false;
     }else{
         document.getElementById('error_precio').innerHTML = "";
     }
-    if(!r_fechaConstruccion){
+   /* if(!r_fechaConstruccion){
         document.getElementById('error_fechaConstruccion').innerHTML = " * No has introducido ninguna fecha 10";
         check=false;
     }else{
         document.getElementById('error_fechaConstruccion').innerHTML = "";
     }
+    */
+
+
     return check;
 }

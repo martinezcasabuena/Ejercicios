@@ -1,9 +1,6 @@
 <div id="contenido">
     <div class="container">
     	<div class="row">
-    			<h3>LISTA DE USUARIOS</h3>
-    	</div>
-    	<div class="row">
     		<p><a href="index.php?page=controller_user&op=create"><img src="view/img/anadir.png"></a></p>
     		
     		<table cellpadding = "3">

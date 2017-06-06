@@ -13,10 +13,13 @@
             $renta=$datos['renta'];
         	$precio=$datos['precio'];
             $tipo=$datos['tipo'];
+            $fechaConstruccion=$datos['fechaConstruccion'];
+            $informacion=$datos['informacion'];
 
 
-        	$sql = " INSERT INTO anuncios (titulo, provincia, ciudad, direccion, metros, habitaciones, banyos, renta, tipo,precio)"
-        		. " VALUES ('$titulo', '$provincia', '$ciudad', '$direccion', '$metros', '$habitaciones', '$banyos', '$renta', '$tipo', '$precio')";
+
+        	$sql = " INSERT INTO anuncios (titulo, provincia, ciudad, direccion, metros, habitaciones, banyos, renta, tipo,precio,fechaConstruccion,fechaPublicacion)"
+        		. " VALUES ('$titulo', '$provincia', '$ciudad', '$direccion', '$metros', '$habitaciones', '$banyos', '$renta', '$tipo', '$precio','$fechaConstruccion',now())";
             
             $conexion = connect::con();
             $res = mysqli_query($conexion, $sql);
@@ -33,8 +36,8 @@
             return $res;
 		}
 		
-		function select_user($user){
-			$sql = "SELECT * FROM anuncios WHERE idAnuncio='$user'";
+		function select_user($idAnuncio){
+			$sql = "SELECT * FROM anuncios WHERE idAnuncio='$idAnuncio'";
 			
 			$conexion = connect::con();
             $res = mysqli_query($conexion, $sql)->fetch_object();
@@ -53,9 +56,11 @@
             $renta=$datos['renta'];
             $precio=$datos['precio'];
             $tipo=$datos['tipo'];
+            $fechaConstruccion=$datos['fechaConstruccion'];
+
         	
         	$sql = " UPDATE anuncios SET titulo='$titulo', provincia='$provincia', ciudad='$ciudad', direccion='$direccion', metros='$metros', habitaciones='$habitaciones', banyos='$banyos',"
-        		. " renta='$renta', precio='$precio', tipo='$tipo' WHERE titulo='$titulo'";
+        		. " renta='$renta', precio='$precio', tipo='$tipo', fechaConstruccion='$fechaConstruccion' WHERE titulo='$titulo'";
             
             $conexion = connect::con();
             $res = mysqli_query($conexion, $sql);
@@ -63,8 +68,8 @@
 			return $res;
 		}
 		
-		function delete_user($user){
-			$sql = "DELETE FROM anuncios WHERE idAnuncio='$user'";
+		function delete_user($idAnuncio){
+			$sql = "DELETE FROM anuncios WHERE idAnuncio='$idAnuncio'";
 			
 			$conexion = connect::con();
             $res = mysqli_query($conexion, $sql);

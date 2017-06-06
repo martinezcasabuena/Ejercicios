@@ -6,7 +6,16 @@
             <td>idAnuncio: </td>
             <td>
                 <?php
-                    echo $user['idAnuncio'];
+                    echo $anuncio['idAnuncio'];
+                ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Fecha publicación anuncio: </td>
+            <td>
+                <?php
+                    echo $anuncio['fechaPublicacion'];
                 ?>
             </td>
         </tr>
@@ -15,7 +24,7 @@
             <td>Titulo Anuncio: </td>
             <td>
                 <?php
-                    echo $user['titulo'];
+                    echo $anuncio['titulo'];
                 ?>
             </td>
         </tr>
@@ -24,7 +33,7 @@
             <td>Provincia: </td>
             <td>
                 <?php
-                    echo $user['provincia'];
+                    echo $anuncio['provincia'];
                 ?>
             </td>
         </tr>
@@ -33,7 +42,7 @@
             <td>Ciudad: </td>
             <td>
                 <?php
-                    echo $user['ciudad'];
+                    echo $anuncio['ciudad'];
                 ?>
             </td>
         </tr>
@@ -42,7 +51,7 @@
             <td>Direccion: </td>
             <td>
                 <?php
-                    echo $user['direccion'];
+                    echo $anuncio['direccion'];
                 ?>
             </td>
         </tr>
@@ -51,7 +60,7 @@
             <td>Metros: </td>
             <td>
                 <?php
-                    echo $user['metros'];
+                    echo $anuncio['metros'];
                 ?>
             </td>
         </tr>
@@ -60,7 +69,7 @@
             <td>Habitaciones: </td>
             <td>
                 <?php
-                    echo $user['habitaciones'];
+                    echo $anuncio['habitaciones'];
                 ?>
             </td>
             
@@ -70,7 +79,7 @@
             <td>Baños: </td>
             <td>
                 <?php
-                    echo $user['banyos'];
+                    echo $anuncio['banyos'];
                 ?>
             </td>
         </tr>
@@ -79,7 +88,7 @@
             <td>Renta: </td>
             <td>
                 <?php
-                    echo $user['renta'];
+                    echo $anuncio['renta'];
                 ?>
             </td>
         </tr>
@@ -88,7 +97,16 @@
             <td>Tipo: </td>
             <td>
                 <?php
-                    echo $user['tipo'];
+                    echo $anuncio['tipo'];
+                ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Fecha construcción: </td>
+            <td>
+                <?php
+                    echo $anuncio['fechaConstruccion'];
                 ?>
             </td>
         </tr>
@@ -97,7 +115,7 @@
             <td>Precio: </td>
             <td>
                 <?php
-                    echo $user['precio'];
+                    echo $anuncio['precio'];
                 ?>
             </td>
         </tr>

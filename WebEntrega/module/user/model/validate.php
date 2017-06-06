@@ -78,6 +78,22 @@
         $reg="/[0-9]{1,6}$/";
         return preg_match($reg,$texto);
     }
+
+    function validate_fechaConstruccion($texto){
+        if(empty($texto)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    function validate_informacion($texto){
+        if(!isset($texto) || empty($texto)){
+            return false;
+        }else{
+            return true;
+        }
+    }
     
     function validate(){
         $check=true;
@@ -95,6 +111,9 @@
         //$v_renta=$_POST['renta'];
         //$v_observaciones=$_POST['observaciones'];
         $v_precio=$_POST['precio'];
+        $v_fechaConstruccion=$_POST['fechaConstruccion'];
+        $v_informacion=$_POST['informacion'];
+
         
         $r_titulo=validate_titulo($v_titulo);
         $r_provincia=validate_provincia($v_provincia);
@@ -105,12 +124,14 @@
         $r_banyos=validate_banyos($v_banyos);
         $r_tipo=validate_tipo($v_tipo);
         //$r_renta=validate_renta($v_renta);
-
        // $r_observaciones=validate_observaciones($v_observaciones);
         $r_precio=validate_precio($v_precio);
+        $r_fechaConstruccion=validate_fechaConstruccion($v_fechaConstruccion);
+        $r_informacion=validate_informacion($v_informacion);
+
         
         if($r_titulo !== 1){
-            $error_titulo = " * El titulo introducido no es valido 1";
+            $error_titulo = " * El titulo introducido no es valido";
             $check=false;
         }else{
             $error_titulo = "";
@@ -175,6 +196,18 @@
         }else{
             $error_precio = "";
         }
+        if(!$r_fechaConstruccion){
+            $error_fechaConstruccion = " * No has introducido ninguna fecha";
+            $check=false;
+        }else{
+            $error_fechaConstruccion = "";
+        }
+        if(!$r_informacion){
+            $error_informacion = " * La informacion introducida no es valida";
+            $check=false;
+        }else{
+            $error_precio = "";
+        }
         $error = array(
                             'titulo' => $error_titulo,
                             'ciudad' => $error_ciudad,
@@ -186,7 +219,9 @@
                             //'renta' => $error_renta,
                             //'observaciones' => $error_observaciones,
                             'precio' => $error_precio,
-                            'habitaciones' => $error_habitaciones
+                            'habitaciones' => $error_habitaciones,
+                            'fechaConstruccion' => $error_fechaConstruccion,
+                            'informacion' => $error_informacion
                         );
         $resultado=array('resultado'=>$check , 'error'=>$error);
         return $resultado;

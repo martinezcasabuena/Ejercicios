@@ -130,6 +130,36 @@
                 
             </tr>
             
+            <tr>
+                <td>Fecha de construccion: </td>
+                <td><input id="fecha" type="text" name="fechaConstruccion" placeholder="Fecha de construccion" value=""/></td>
+                <td><font color="red">
+                    <span id="error_fechaConstruccion" class="error">
+                        <?php
+                         echo $error['fechaConstruccion']
+                        ?>
+                    </span>
+                </font></font></td>
+            </tr>
+
+
+
+            <tr>
+                <td>Otra informacion: </td>
+                <td><input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="reforma"/>Reforma reciente
+                    <input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="garaje"/>Garaje
+                    <input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="terraza"/>Terraza
+                    <input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="patioInt"/>Patio Interior
+                    <input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="patioExt"/>Patio exterior
+                    </td>
+                    <td><font color="red">
+                    <span id="error_informacion" class="error">
+                        <?php
+                         echo $error['informacion']
+                        ?>
+                    </span>
+                </font></font></td>
+            </tr>
             
           <!--  <tr>
                 <td>Observaciones: </td>

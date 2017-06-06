@@ -4,7 +4,7 @@
         <table border='0'>
             <tr>
                 <td>Titulo Anuncio: </td>
-                <td><input type="text" id="titulo" name="titulo" placeholder="Titulo Anuncio" value="<?php echo $user['titulo'];?>" readonly/></td>
+                <td><input type="text" id="titulo" name="titulo" placeholder="Titulo Anuncio" value="<?php echo $anuncio['titulo'];?>" readonly/></td>
                 <td><font color="red">
                     <span id="error_titulo" class="error">
                         <?php
@@ -16,7 +16,7 @@
         
             <tr>
                 <td>Provincia: </td>
-                <td><input type="text" id="provincia" name="provincia" placeholder="Provincia" value="<?php echo $user['provincia'];?>"/></td>
+                <td><input type="text" id="provincia" name="provincia" placeholder="Provincia" value="<?php echo $anuncio['provincia'];?>"/></td>
                 <td><font color="red">
                     <span id="error_provincia" class="error">
                         <?php
@@ -28,7 +28,7 @@
             
             <tr>
                 <td>Ciudad: </td>
-                <td><input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" value="<?php echo $user['ciudad'];?>"/></td>
+                <td><input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" value="<?php echo $anuncio['ciudad'];?>"/></td>
                 <td><font color="red">
                     <span id="error_ciudad" class="error">
                         <?php
@@ -40,7 +40,7 @@
             
             <tr>
                 <td>Direccion: </td>
-                <td><input type="text" id= "direccion" name="direccion" placeholder="Direccion" value="<?php echo $user['direccion'];?>"/></td>
+                <td><input type="text" id= "direccion" name="direccion" placeholder="Direccion" value="<?php echo $anuncio['direccion'];?>"/></td>
                 <td><font color="red">
                     <span id="error_direccion" class="error">
                         <?php
@@ -52,7 +52,7 @@
             
             <tr>
                 <td>Metros: </td>
-                <td><input type="text" id= "metros" name="metros" placeholder="Metros" value="<?php echo $user['metros'];?>"/></td>
+                <td><input type="text" id= "metros" name="metros" placeholder="Metros" value="<?php echo $anuncio['metros'];?>"/></td>
                 <td><font color="red">
                     <span id="error_metros" class="error">
                         <?php
@@ -64,7 +64,7 @@
             
             <tr>
                 <td>Habitaciones: </td>
-                <td><input type="text" id="habitaciones" name="habitaciones" placeholder="Habitaciones" value="<?php echo $user['habitaciones'];?>"/></td>
+                <td><input type="text" id="habitaciones" name="habitaciones" placeholder="Habitaciones" value="<?php echo $anuncio['habitaciones'];?>"/></td>
                 <td><font color="red">
                     <span id="error_habitaciones" class="error">
                         <?php
@@ -77,7 +77,7 @@
 
             <tr>
                 <td>Baños: </td>
-                <td><input type="text" id="banyos" name="banyos" placeholder="Baños" value="<?php echo $user['banyos'];?>"/></td>
+                <td><input type="text" id="banyos" name="banyos" placeholder="Baños" value="<?php echo $anuncio['banyos'];?>"/></td>
                 <td><font color="red">
                     <span id="error_banyos" class="error">
                         <?php
@@ -92,7 +92,7 @@
                 <td>Renta: </td>
                 <td>
                     <?php
-                        if ($user['renta']==="alquiler"){
+                        if ($anuncio['renta']==="alquiler"){
                     ?>
                         <input type="radio" id="renta" name="renta" placeholder="Renta" value="alquiler" checked/>Alquiler
                         <input type="radio" id="renta" name="renta" placeholder="Renta" value="venta"/>Venta
@@ -118,13 +118,13 @@
                 <td>Tipo: </td>
                 <td><select id="tipo" name="tipo" placeholder="Tipo">
                     <?php
-                        if($user['tipo']==="piso"){
+                        if($anuncio['tipo']==="piso"){
                     ?>
                         <option value="piso" selected>Piso</option>
                         <option value="chalet">Chalet</option>
                         <option value="casa">Casa</option>
                     <?php
-                        }elseif($user['tipo']==="Portugal"){
+                        }elseif($anuncio['tipo']==="chalet"){
                     ?>
                         <option value="piso">Piso</option>
                         <option value="chalet" selected>Chalet</option>
@@ -150,7 +150,7 @@
 
             <tr>
                 <td>Precio: </td>
-                <td><input type="text" id="precio" name="precio" placeholder="Precio" value="<?php echo $user['precio'];?>"/></td>
+                <td><input type="text" id="precio" name="precio" placeholder="Precio" value="<?php echo $anuncio['precio'];?>"/></td>
                 <td><font color="red">
                     <span id="error_precio" class="error">
                         <?php
@@ -161,9 +161,20 @@
                 
             </tr>
             
+            <tr>
+                <td>Fecha de construccion: </td>
+                <td><input id="fecha" type="text" name="fechaConstruccion" placeholder="Fecha de construccion" value="<?php echo $anuncio['fechaConstruccion'];?>"/></td>
+                <td><font color="red">
+                    <span id="error_fechaConstruccion" class="error">
+                        <?php
+                         echo $error['fechaConstruccion']
+                        ?>
+                    </span>
+                </font></font></td>
+            </tr>
          <!--   <tr>
                 <td>Observaciones: </td>
-                <td><textarea cols="30" rows="5" id="observaciones" name="observaciones" placeholder="observaciones"><?php echo $user['comment'];?></textarea></td>
+                <td><textarea cols="30" rows="5" id="observaciones" name="observaciones" placeholder="observaciones"><?php echo $anuncio['comment'];?></textarea></td>
                 <td><font color="red">
                     <span id="error_observaciones" class="error">
                         <?php
@@ -176,7 +187,7 @@
          <!--   <tr>
                 <td>Aficiones: </td>
                 <?php
-                    $afi=explode(":", $user['hobby']);
+                    $afi=explode(":", $anuncio['hobby']);
                 ?>
                 <td>
                     <?php
