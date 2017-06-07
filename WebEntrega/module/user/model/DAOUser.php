@@ -14,13 +14,15 @@
         	$precio=$datos['precio'];
             $tipo=$datos['tipo'];
             $fechaConstruccion=$datos['fechaConstruccion'];
-            $informacion=$datos['informacion'];
+            //$informacion=$datos['informacion'];
+            foreach ($datos['informacion'] as $indice) {
+                $informacion="$indice:";
+            }
 
 
-
-        	$sql = " INSERT INTO anuncios (titulo, provincia, ciudad, direccion, metros, habitaciones, banyos, renta, tipo,precio,fechaConstruccion,fechaPublicacion)"
-        		. " VALUES ('$titulo', '$provincia', '$ciudad', '$direccion', '$metros', '$habitaciones', '$banyos', '$renta', '$tipo', '$precio','$fechaConstruccion',now())";
-            
+        	$sql = " INSERT INTO anuncios (titulo, provincia, ciudad, direccion, metros, habitaciones, banyos, renta, tipo,precio,fechaConstruccion,fechaPublicacion,informacion)"
+        		. " VALUES ('$titulo', '$provincia', '$ciudad', '$direccion', '$metros', '$habitaciones', '$banyos', '$renta', '$tipo', '$precio','$fechaConstruccion',now(),'$informacion')";
+    
             $conexion = connect::con();
             $res = mysqli_query($conexion, $sql);
             connect::close($conexion);
@@ -57,11 +59,16 @@
             $precio=$datos['precio'];
             $tipo=$datos['tipo'];
             $fechaConstruccion=$datos['fechaConstruccion'];
+            //$informacion=$datos['informacion'];
+            foreach ($datos['informacion'] as $indice) {
+                $informacion="$indice:";
+            }
 
         	
         	$sql = " UPDATE anuncios SET titulo='$titulo', provincia='$provincia', ciudad='$ciudad', direccion='$direccion', metros='$metros', habitaciones='$habitaciones', banyos='$banyos',"
-        		. " renta='$renta', precio='$precio', tipo='$tipo', fechaConstruccion='$fechaConstruccion' WHERE titulo='$titulo'";
-            
+        		. " renta='$renta', precio='$precio', tipo='$tipo', fechaConstruccion='$fechaConstruccion', informacion='$informacion' WHERE titulo='$titulo'";
+
+
             $conexion = connect::con();
             $res = mysqli_query($conexion, $sql);
             connect::close($conexion);

@@ -1,6 +1,6 @@
 
 function validate_titulo(texto){
-    if (texto.length > 10){
+    if (texto.length > 0){
         var reg=/^[a-zA-Z]*$/;
         return reg.test(texto);
     }

@@ -119,6 +119,15 @@
                 ?>
             </td>
         </tr>
+
+        <tr>
+            <td>Informacion: </td>
+            <td>
+                <?php
+                    echo $anuncio['informacion'];
+                ?>
+            </td>
+        </tr>
     </table>
     </p>
     <p><a href="index.php?page=controller_user&op=list">Volver</a></p>

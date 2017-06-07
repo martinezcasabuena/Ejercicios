@@ -206,7 +206,7 @@
             $error_informacion = " * La informacion introducida no es valida";
             $check=false;
         }else{
-            $error_precio = "";
+            $error_informacion = "";
         }
         $error = array(
                             'titulo' => $error_titulo,

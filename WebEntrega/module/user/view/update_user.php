@@ -1,5 +1,5 @@
 <div id="contenido">
-    <form autocomplete="on" method="post" name="aupdate_user" id="update_user" onsubmit="return validate();" action="index.php?page=controller_user&op=update">
+    <form autocomplete="on" method="post" name="update_user" id="update_user" onsubmit="return validate();" action="index.php?page=controller_user&op=update">
         <h1>Modificar Anuncio</h1>
         <table border='0'>
             <tr>
@@ -172,6 +172,73 @@
                     </span>
                 </font></font></td>
             </tr>
+
+
+            <tr>
+                <td>Informacion: </td>
+                <?php
+                    $afi=explode(":", $anuncio['informacion']);
+                ?>
+                <td>
+                    <?php
+                        $busca_array=in_array("reforma", $afi);
+                        if($busca_array){
+                    ?>
+                        <input type="checkbox" id= "informacion[]" name="informacion[]" value="reforma" checked/>Reforma
+                    <?php
+                        }else{
+                    ?>
+                        <input type="checkbox" id= "informacion[]" name="informacion[]" value="reforma"/>Reforma
+                    <?php
+                        }
+                    ?>
+                    <?php
+                        $busca_array=in_array("garaje", $afi);
+                        if($busca_array){
+                    ?>
+                        <input type="checkbox" id= "informacion[]" name="informacion[]" value="garaje" checked/>Garaje
+                    <?php
+                        }else{
+                    ?>
+                        <input type="checkbox" id= "informacion[]" name="informacion[]" value="garaje"/>Garaje
+                    <?php
+                        }
+                    ?>
+                    <?php
+                        $busca_array=in_array("terraza", $afi);
+                        if($busca_array){
+                    ?>
+                        <input type="checkbox" id= "informacion[]" name="informacion[]" value="terraza" checked/>Terraza
+                    <?php
+                        }else{
+                    ?>
+                    <input type="checkbox" id= "informacion[]" name="informacion[]" value="terraza"/>Terraza
+                    <?php
+                        }
+                    ?>
+                   
+                    <?php
+                        $busca_array=in_array("patio", $afi);
+                        if($busca_array){
+                    ?>
+                        <input type="checkbox" id= "informacion[]" name="informacion[]" value="patio" checked/>Patio</td>
+                    <?php
+                        }else{
+                    ?>
+                    <input type="checkbox" id= "informacion[]" name="informacion[]" value="patio"/>Patio</td>
+                    <?php
+                        }
+                    ?>
+                </td>
+                <td><font color="red">
+                    <span id="error_informacion" class="error">
+                        <?php
+                            echo $error['informacion']
+                        ?>
+                    </span>
+                </font></font></td>
+            </tr>
+
          <!--   <tr>
                 <td>Observaciones: </td>
                 <td><textarea cols="30" rows="5" id="observaciones" name="observaciones" placeholder="observaciones"><?php echo $anuncio['comment'];?></textarea></td>
@@ -184,58 +251,7 @@
                 </font></font></td>
             </tr>
           -->  
-         <!--   <tr>
-                <td>Aficiones: </td>
-                <?php
-                    $afi=explode(":", $anuncio['hobby']);
-                ?>
-                <td>
-                    <?php
-                        $busca_array=in_array("Informatica", $afi);
-                        if($busca_array){
-                    ?>
-                        <input type="checkbox" id= "aficion[]" name="aficion[]" value="Informatica" checked/>informatica
-                    <?php
-                        }else{
-                    ?>
-                        <input type="checkbox" id= "aficion[]" name="aficion[]" value="Informatica"/>informatica
-                    <?php
-                        }
-                    ?>
-                    <?php
-                        $busca_array=in_array("Alimentacion", $afi);
-                        if($busca_array){
-                    ?>
-                        <input type="checkbox" id= "aficion[]" name="aficion[]" value="Alimentacion" checked/>alimentacion
-                    <?php
-                        }else{
-                    ?>
-                        <input type="checkbox" id= "aficion[]" name="aficion[]" value="Alimentacion"/>alimentacion
-                    <?php
-                        }
-                    ?>
-                    <?php
-                        $busca_array=in_array("Automovil", $afi);
-                        if($busca_array){
-                    ?>
-                        <input type="checkbox" id= "aficion[]" name="aficion[]" value="Automovil" checked/>automovil</td>
-                    <?php
-                        }else{
-                    ?>
-                    <input type="checkbox" id= "aficion[]" name="aficion[]" value="Automovil"/>automovil</td>
-                    <?php
-                        }
-                    ?>
-                </td>
-                <td><font color="red">
-                    <span id="error_aficion" class="error">
-                        <?php
-                            echo $error['aficion']
-                        ?>
-                    </span>
-                </font></font></td>
-            </tr>
-            -->
+        
             <tr>
                 <td><input type="submit" name="update" id="update"/></td>
                 <td align="right"><a href="index.php?page=controller_user&op=list">Volver</a></td>

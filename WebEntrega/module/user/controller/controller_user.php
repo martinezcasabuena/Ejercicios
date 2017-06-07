@@ -83,7 +83,8 @@
                             'renta' =>'',
                             'tipo' => '',
                             'precio' => '',
-                            'fechaConstruccion' => ''
+                            'fechaConstruccion' => '',
+                            'informacion' => ''
 
                     );
             if (isset($_POST['update'])){

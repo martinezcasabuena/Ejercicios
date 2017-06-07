@@ -146,11 +146,10 @@
 
             <tr>
                 <td>Otra informacion: </td>
-                <td><input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="reforma"/>Reforma reciente
-                    <input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="garaje"/>Garaje
-                    <input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="terraza"/>Terraza
-                    <input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="patioInt"/>Patio Interior
-                    <input type="checkbox" id= "informacion" name="informacion" placeholder= "informacion" value="patioExt"/>Patio exterior
+                <td><input type="checkbox" id= "informacion[]" name="informacion[]" placeholder= "informacion" value="reforma"/>Reforma reciente
+                    <input type="checkbox" id= "informacion[]" name="informacion[]" placeholder= "informacion" value="garaje"/>Garaje
+                    <input type="checkbox" id= "informacion[]" name="informacion[]" placeholder= "informacion" value="terraza"/>Terraza
+                    <input type="checkbox" id= "informacion[]" name="informacion[]" placeholder= "informacion" value="patio"/>Patio
                     </td>
                     <td><font color="red">
                     <span id="error_informacion" class="error">
