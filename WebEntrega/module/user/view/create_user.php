@@ -1,5 +1,5 @@
 <div id="contenido">
-    <form autocomplete="on" method="post" name="alta_user" id="alta_user" onsubmit="return validate();" action="index.php?page=controller_user&op=create">
+    <form class="formulario" autocomplete="on" method="post" name="alta_user" id="alta_user" onsubmit="return validate();" action="index.php?page=controller_user&op=create">
         <h1>Anuncio nuevo</h1>
         <table border='0'>
             <tr>

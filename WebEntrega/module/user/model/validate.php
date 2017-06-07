@@ -36,17 +36,17 @@
     }
     
     function validate_metros($texto){
-        $reg="/[0-9]{1,2}$/";
+        $reg="/[0-9]{1,6}$/";
         return preg_match($reg,$texto);
     }
     
     function validate_habitaciones($texto){
-        $reg="/[0-9]{1,2}$/";
+        $reg="/[0-9]{1,6}$/";
         return preg_match($reg,$texto);
     }
     
     function validate_banyos($texto){
-        $reg="/[0-9]{1,2}$/";
+        $reg="/[0-9]{1,6}$/";
         return preg_match($reg,$texto);
     }
     

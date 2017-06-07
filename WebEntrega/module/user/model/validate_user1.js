@@ -1,8 +1,7 @@
 
 function validate_titulo(texto){
     if (texto.length > 0){
-        var reg=/^[a-zA-Z]*$/;
-        return reg.test(texto);
+        return true;
     }
     return false;
 }
@@ -33,25 +32,27 @@ function validate_direccion(texto){
 
 function validate_metros(texto){
     if (texto.length > 0){
-        return true;
+        var reg=/^[0-9]{1,6}$/;
+        return reg.test(texto);
     }
     return false;
 }
 
 function validate_habitaciones(texto){
     if (texto.length > 0){
-        return true;
+        var reg=/^[0-9]{1,6}$/;
+        return reg.test(texto);
     }
     return false;
 }
 
 function validate_banyos(texto){
     if (texto.length > 0){
-        return true;
+        var reg=/^[0-9]{1,6}$/;
+        return reg.test(texto);
     }
     return false;
 }
-
 function validate_renta(texto){
     var i;
     var ok=0;

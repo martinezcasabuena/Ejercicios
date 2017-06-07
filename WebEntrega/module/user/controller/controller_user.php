@@ -99,7 +99,7 @@
                         $callback = 'index.php?page=503';
                         die('<script>window.location.href="'.$callback .'";</script>');
                     }
-                    
+  
                     if($rdo){
                         echo '<script language="javascript">alert("Actualizado en la base de datos correctamente")</script>';
                         $callback = 'index.php?page=controller_user&op=list';
@@ -110,6 +110,7 @@
                     }
                 }
                 else {
+                    die();
                     $error = $result['error'];
                     $_SESSION['anuncio']=$_POST;
                     $_GET['id']=$_POST['titulo'];
@@ -118,7 +119,7 @@
 
             try{
                 $daouser = new DAOUser();
-                print_r($_GET['id']);
+                //print_r($_GET['id']);
                 $rdo = $daouser->select_user($_GET['id']);
                 $anuncio=get_object_vars($rdo);
             }catch (Exception $e){

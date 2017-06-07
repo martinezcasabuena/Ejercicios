@@ -1,1 +1,3 @@
-<img src="">
+<div id="inicio">
+
+</div>

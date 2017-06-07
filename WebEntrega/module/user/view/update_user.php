@@ -1,5 +1,5 @@
 <div id="contenido">
-    <form autocomplete="on" method="post" name="update_user" id="update_user" onsubmit="return validate();" action="index.php?page=controller_user&op=update">
+    <form class="formulario" autocomplete="on" method="post" name="update_user" id="update_user" onsubmit="return validate();" action="index.php?page=controller_user&op=update">
         <h1>Modificar Anuncio</h1>
         <table border='0'>
             <tr>

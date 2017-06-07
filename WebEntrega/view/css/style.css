@@ -4,31 +4,47 @@
          fontstyle:italic;
 }
 body{
-    background-color:#F0F0FF;
+    background-color:white;
     background-image: url();
     background-attachment: fixed;
     background-repeat:no-repeat;
+
+    float: center;
+
 }
 h1{
     font-size: 32pt;
 }
+label{
+    display: block;
+    font-weight: bold;
+}
 #wrapper {
-	width:800px;
+	width:1200px;
 	margin:auto;
 	background-color:#FFFFFF;	
 }
-#header {
-	height:80px;
-	background-color: lightblue;
-	background-image:url();
+#inicio{
+
+	height:800px;
+	width: 1200px;
 	background-repeat:no-repeat;
-	height:120px;
+	background-color: white;
+	background-attachment: fixed;
+	background-position: center center;
+}
+#header {
+	background-color: lightblue;
+	background-image:url(../img/header.jpg);
+	background-repeat:no-repeat;
+	height:200px;
 }
 #menu {
-	background-image:url(../img/menu.png);
+	background-color: Cadetblue;
 	height:25px;
 	padding-top:5px;
 	text-align:center;
+	margin-bottom: 20px;
 }
 #menu a, #footer a{
 	color:#FFFFFF;
@@ -42,20 +58,15 @@ h1{
 	padding:20px;
 }
 #footer {
-	background-image:url(../img/menu.png);
+	background-color: Cadetblue;
 	height:25px;
 	padding-top:5px;
 	text-align:center;
 }
 .Button_green {
-	background-color:green;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
-	border:1px solid green;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:green;
 	font-family:Arial;
 	font-size:17px;
 	padding:16px 31px;
@@ -70,12 +81,6 @@ h1{
 	top:1px;
 }
 .Button_blue {
-	background-color:blue;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
-	border:1px solid blue;
-	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
@@ -92,11 +97,6 @@ h1{
 	top:1px;
 }
 .Button_red {
-	background-color:crimson;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
-	border:1px solid crimson;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -112,4 +112,13 @@ h1{
 .Button_red:active {
 	position:relative;
 	top:1px;
+}
+
+.formulario input[type='text'], .formulario textarea{
+    padding: 12px 14px;
+    width: 394px;
+    border: 1px solid #CED5D7;
+    resize: none;
+    box-shadow:0 0 0 3px #EEF5F7;
+    margin: 5px 0;
 }

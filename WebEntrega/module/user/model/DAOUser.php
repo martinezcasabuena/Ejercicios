@@ -67,6 +67,7 @@
         	
         	$sql = " UPDATE anuncios SET titulo='$titulo', provincia='$provincia', ciudad='$ciudad', direccion='$direccion', metros='$metros', habitaciones='$habitaciones', banyos='$banyos',"
         		. " renta='$renta', precio='$precio', tipo='$tipo', fechaConstruccion='$fechaConstruccion', informacion='$informacion' WHERE titulo='$titulo'";
+            echo ("");
 
 
             $conexion = connect::con();
